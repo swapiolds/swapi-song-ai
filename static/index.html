@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swapi Song AI — Turn Words Into Music</title>
+    <meta name="description" content="Transform English lyrics into professional AI-generated music. Free, no GPU required.">
+    <link rel="icon" href="/static/logo.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <canvas id="bg-canvas"></canvas>
+
+    <div class="app-shell">
+
+        <aside class="sidebar">
+            <div class="brand">
+                <img src="/static/logo.png" alt="Swapi" class="brand-icon">
+                <div>
+                    <div class="brand-name">Swapi <span class="brand-accent">AI</span></div>
+                    <div class="brand-tagline">Song Generator</div>
+                </div>
+            </div>
+
+            <nav class="nav">
+                <a href="#" class="nav-link active" data-page="home">
+                    <i class='bx bx-home-alt-2'></i><span>Home</span>
+                </a>
+                <a href="#" class="nav-link" data-page="create">
+                    <i class='bx bx-magic-wand'></i><span>Create</span>
+                </a>
+                <a href="#" class="nav-link" data-page="library">
+                    <i class='bx bx-library'></i><span>Library</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-bottom">
+                <div class="powered-by">
+                    <i class='bx bx-chip'></i> Powered by Swapi
+                </div>
+                <div class="sidebar-badge">
+                    <i class='bx bx-infinite'></i> Always Free
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-area">
+
+            <div class="page active-page" id="page-home">
+                <div class="hero">
+                    <div class="hero-badge">
+                        <span class="pulse-dot"></span> Live &amp; Free — English Lyrics Supported
+                    </div>
+                    <h1 class="hero-headline">
+                        Your words,<br>
+                        <span class="shimmer-text">your music.</span>
+                    </h1>
+                    <p class="hero-sub">
+                        Swapi Song AI converts your English lyrics into full, high-quality tracks — complete with vocals, instruments and dynamic arrangements. No cost. No hardware needed.
+                    </p>
+                    <div class="hero-cta">
+                        <button class="btn-glow" data-goto="create">
+                            <i class='bx bx-magic-wand'></i> Create Your Song
+                        </button>
+                        <button class="btn-outline" data-goto="library">
+                            <i class='bx bx-library'></i> View Library
+                        </button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat"><span>14+</span>Genres</div>
+                        <div class="stat-sep">·</div>
+                        <div class="stat"><span>FLAC</span>Quality</div>
+                        <div class="stat-sep">·</div>
+                        <div class="stat"><span>100%</span>Free</div>
+                        <div class="stat-sep">·</div>
+                        <div class="stat"><span>EN</span>Only</div>
+                    </div>
+                </div>
+
+                
+                <div class="features-grid" id="feature-cards">
+                    <div class="card-3d">
+                        <div class="card-glow"></div>
+                        <div class="card-inner">
+                            <div class="card-icon purple"><i class='bx bx-microphone'></i></div>
+                            <h3>Lyrics → Song</h3>
+                            <p>Write English lyrics using simple structure tags and the AI composes a full track around them.</p>
+                        </div>
+                    </div>
+                    <div class="card-3d">
+                        <div class="card-glow" style="--glow-color: rgba(0,212,255,0.5)"></div>
+                        <div class="card-inner">
+                            <div class="card-icon cyan"><i class='bx bx-equalizer'></i></div>
+                            <h3>Genre Control</h3>
+                            <p>Pop, Rock, Hip-Hop, Electronic, Cinematic and more. You choose the sound.</p>
+                        </div>
+                    </div>
+                    <div class="card-3d">
+                        <div class="card-glow" style="--glow-color: rgba(255,94,224,0.5)"></div>
+                        <div class="card-inner">
+                            <div class="card-icon pink"><i class='bx bx-download'></i></div>
+                            <h3>Instant Download</h3>
+                            <p>Every song is yours in lossless FLAC format — download instantly after generation.</p>
+                        </div>
+                    </div>
+                </div>
+
+                
+                <div class="how-it-works">
+                    <h2 class="section-title">How it works</h2>
+                    <div class="steps">
+                        <div class="step">
+                            <div class="step-num">1</div>
+                            <div class="step-body">
+                                <h4>Write English Lyrics</h4>
+                                <p>Head to Create and type your English lyrics using structure tags like <code>[verse]</code> and <code>[chorus]</code>.</p>
+                            </div>
+                        </div>
+                        <div class="step-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+                        <div class="step">
+                            <div class="step-num">2</div>
+                            <div class="step-body">
+                                <h4>Pick a Genre</h4>
+                                <p>Select a genre and optionally describe the vibe (e.g. "upbeat female vocals, electric guitar").</p>
+                            </div>
+                        </div>
+                        <div class="step-arrow"><i class='bx bx-right-arrow-alt'></i></div>
+                        <div class="step">
+                            <div class="step-num">3</div>
+                            <div class="step-body">
+                                <h4>Generate &amp; Download</h4>
+                                <p>Hit Generate. In about 30–60 seconds you'll have a full track ready to play and download.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            
+            <div class="page" id="page-create">
+                <div class="create-wrap">
+                    <div class="create-left">
+                        <div class="create-title">
+                            <h2>Create a Track</h2>
+                            <p>English lyrics only · Results in ~30–60 seconds</p>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-field">
+                                <label><i class='bx bx-music'></i> Genre</label>
+                                <select id="genre" class="styled-ctrl">
+                                    <option value="Auto">🎵 Auto — AI Decides</option>
+                                    <option value="Pop">Pop</option>
+                                    <option value="Rock">Rock</option>
+                                    <option value="Electronic">Electronic</option>
+                                    <option value="Hip-Hop">Hip-Hop</option>
+                                    <option value="R&B/Soul">R&amp;B / Soul</option>
+                                    <option value="Jazz">Jazz</option>
+                                    <option value="Ballad">Ballad</option>
+                                    <option value="Latin">Latin</option>
+                                    <option value="Metal">Metal</option>
+                                    <option value="Country">Country</option>
+                                    <option value="Funk">Funk</option>
+                                    <option value="Soundtrack">Cinematic</option>
+                                </select>
+                            </div>
+                            <div class="form-field">
+                                <label><i class='bx bx-slider-alt'></i> Vibe <em>(Optional)</em></label>
+                                <input type="text" id="description" class="styled-ctrl" placeholder="e.g. female vocals, upbeat, electric guitar">
+                            </div>
+                        </div>
+
+                        <div class="form-field">
+                            <div class="label-row">
+                                <label><i class='bx bx-edit'></i> English Lyrics <span class="req">*</span></label>
+                                <span class="eng-badge"><i class='bx bx-globe'></i> English Only</span>
+                            </div>
+                            <textarea id="lyrics" class="styled-ctrl lyrics-area" rows="13" spellcheck="true" lang="en" placeholder="[verse]
+Under neon lights we run
+Chasing dreams until they're done
+Echoes fade but hearts still know
+Every spark was meant to glow
+
+[chorus]
+We rise we fall we stand through it all
+This is our song this is where we belong
+
+[outro-short]"></textarea>
+                            <div class="field-hint">
+                                <i class='bx bx-info-circle'></i>
+                                Tags: <code>[intro-short]</code> <code>[verse]</code> <code>[chorus]</code> <code>[bridge]</code> <code>[outro-short]</code>
+                            </div>
+                        </div>
+
+                        <button id="generate-btn" class="btn-generate btn-glow">
+                            <i class='bx bx-music'></i>
+                            <span id="btn-label">Generate Song</span>
+                            <div class="spinner hidden" id="spinner"></div>
+                        </button>
+
+                        <div id="error-box" class="error-box hidden"></div>
+                    </div>
+
+                    <div class="create-right">
+                        <div class="result-panel" id="result-panel">
+
+                            <div class="result-placeholder" id="state-idle">
+                                <div class="vinyl-anim">
+                                    <div class="vinyl-ring r1"></div>
+                                    <div class="vinyl-ring r2"></div>
+                                    <div class="vinyl-ring r3"></div>
+                                    <div class="vinyl-center"><i class='bx bx-music'></i></div>
+                                </div>
+                                <p>Your generated song will appear here</p>
+                            </div>
+
+                            <div class="result-skeleton hidden" id="state-loading">
+                                <div class="sk-art"></div>
+                                <div class="sk-lines">
+                                    <div class="sk-line sk-title"></div>
+                                    <div class="sk-line sk-sub"></div>
+                                </div>
+                                <div class="sk-progress-wrap">
+                                    <div class="sk-progress-bar">
+                                        <div class="sk-progress-fill" id="sk-fill"></div>
+                                    </div>
+                                    <div class="sk-progress-label" id="sk-label">Composing your track…</div>
+                                </div>
+                            </div>
+
+                            
+                            <div class="result-ready hidden" id="result-ready">
+                               
+                                <canvas id="artwork-canvas" width="200" height="200" class="artwork-canvas"></canvas>
+                                <div class="result-title" id="result-title">Generated Track</div>
+                                <div class="result-genre" id="result-genre">Pop · Swapi AI</div>
+                                <div class="result-actions">
+                                    <button class="result-play-btn" id="result-play-btn">
+                                        <i class='bx bx-play' id="result-play-icon"></i>
+                                    </button>
+                                    <a id="result-download" href="#" download class="result-dl-btn" onclick="window._toastDownload()">
+                                        <i class='bx bx-download'></i> Download FLAC
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+           
+            <div class="page" id="page-library">
+                <div class="lib-header">
+                    <h2>Your Library</h2>
+                    <p>Songs generated this session</p>
+                </div>
+                <div class="library-list" id="library-list">
+                    <div class="empty-state">
+                        <i class='bx bx-music'></i>
+                        <p>No tracks yet. Go create your first song!</p>
+                        <button class="btn-ghost" data-goto="create"><i class='bx bx-magic-wand'></i> Create Now</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <footer class="player" id="player">
+        <div class="player-left">
+            <div class="player-thumb" id="player-thumb">
+                <i class='bx bx-music'></i>
+            </div>
+            <div class="player-meta">
+                <div class="player-title" id="player-title">No track loaded</div>
+                <div class="player-artist">Swapi Song AI</div>
+            </div>
+        </div>
+
+        <div class="player-center">
+            <div class="player-btns">
+                <button class="player-btn" id="btn-play"><i class='bx bx-play-circle' id="play-icon"></i></button>
+            </div>
+            <div class="player-progress">
+                <span class="player-time" id="time-current">0:00</span>
+                <div class="progress-track" id="progress-track">
+                    <div class="progress-fill" id="progress-fill"></div>
+                </div>
+                <span class="player-time" id="time-total">0:00</span>
+            </div>
+            <canvas id="waveform-canvas" class="waveform-canvas"></canvas>
+        </div>
+
+        <div class="player-right">
+            <a href="#" id="download-btn" class="player-dl-btn hidden" download onclick="window._toastDownload()">
+                <i class='bx bx-download'></i> Download
+            </a>
+            <button class="player-btn"><i class='bx bx-volume-full'></i></button>
+        </div>
+
+        <audio id="audio" preload="auto"></audio>
+    </footer>
+
+    <div id="toast-container"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="/static/script.js"></script>
+</body>
+</html>
