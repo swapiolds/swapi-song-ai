@@ -2,7 +2,7 @@
   <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExejB3cndvMnI3emlhbzE0Zmp0NXJ6dGFjcnI3aDgzZmp6bDZ4OG5zdyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/xT9IgzoKnwFNmISR8I/giphy.gif" alt="3D Music Wave Logo" width="250"/>
 
   <h1>
-    <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=40&pause=1000&color=00F0FF&center=true&vCenter=true&width=600&height=80&lines=SongGen+AI+Studio;Your+Personal+Music+Producer;Text-to-Song+Magic;Fast+%26+Modern" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.herokuapp.com?font=Orbitron&weight=700&size=35&pause=1000&color=00F0FF&center=true&vCenter=true&width=800&height=80&lines=SongGen+AI+Studio;Your+Personal+Music+Producer;Text-to-Song+Magic;Fast+%26+Modern" alt="Typing SVG" />
   </h1>
 
   <p><b>Transform your lyrics into full-fledged studio-quality songs in seconds.</b></p>
