@@ -67,7 +67,7 @@ Because the backend dynamically reads the `PORT` environment variable and uses r
 
 Connect with me for discussions, ideas, or to report an issue!
 
-[![Telegram](https://img.shields.io/badge/Chat%20on-Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/swapibhai) **@swapibhai**
+[![Telegram @swapibhai](https://img.shields.io/badge/Telegram-%40swapibhai-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/swapibhai)
 
 <br/>
 <div align="center">
